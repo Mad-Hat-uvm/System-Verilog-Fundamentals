@@ -1,0 +1,7 @@
+Weighted Distribution 
+The dist operator: 
+constraint {v inside {0, 1}; } 
+constraint {v dist {0:=70, 1:=10}; } // If we send 80 seeds(70 + 10), probablity is 70 will be 0 and 10 will be 1. 
+The dist operator takes a list of values and weights, separated by the 
+":=" or the ":/" operator.
+The weights are not percentages and do not have to add up to 100. 
