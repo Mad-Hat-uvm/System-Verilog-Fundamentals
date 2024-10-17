@@ -1,0 +1,16 @@
+Implication Constraints 
+SV supports two implication operators:"->" and "if. 
+Lets look at implication operator: "->". Suppose, 
+constraint cl {A -> B;} 
+How above implication operator works is:
+If A is TRUE, B must be TRUE
+If A is FALSE, B can be TRUE or FALSE
+Lets looks example: 
+class impCons; 
+rand bit a, b; 
+constraint c2 {(a==l) -> (b==1);}
+endclass 
+Possible values for a and b are: 
+if a == 1, b == 1
+if a == 0, b can be 0 or 1
+The case "a = 1 and b = 0" will never occur.
