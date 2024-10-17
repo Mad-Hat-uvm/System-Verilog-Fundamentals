@@ -14,3 +14,7 @@ Possible values for a and b are:
 if a == 1, b == 1
 if a == 0, b can be 0 or 1
 The case "a = 1 and b = 0" will never occur.
+
+IMPORTANT: There is no priority whether the constraints of a or b will be resolved first. 
+Each can be picked up independently in any order, but only those values which fullfill both conditions 
+will be forwarded.
