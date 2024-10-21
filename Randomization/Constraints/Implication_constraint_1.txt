@@ -8,7 +8,9 @@ constraint c2 {
 endclass 
 
 Possible values are: 
-If "a =1", then "b" must be "1", but there is another constraint so "a" cannot take value "1". 
-If "a = O", b" can be "O" or "I", but other constraint says so in this case, "b" can take only "O" 
+If "a =1", then "b" must be "1", but there is another constraint so "a" cannot take 
+value "1". 
+If "a = O", b" can be "O" or "I", but other constraint says so in this case, 
+"b" can take only "O" 
 So, only possible values "a" and "b" can take in this example is: 
 a = 0 and b=0. 
