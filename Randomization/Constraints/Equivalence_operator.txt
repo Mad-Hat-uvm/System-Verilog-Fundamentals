@@ -1,0 +1,21 @@
+Equivalence Operator in Constraint block
+
+Equivalence Operator(" <- >") is bi-directional.
+
+rand bit a, b;
+
+constraint c { (a == 1) <- > (b == 1);}
+
+Possible values are:
+
+If a is 1, then b must be 1.
+
+If b is 1, then a must be 1.
+
+This operator is bi-directional, constraining one values which fix the other value.
+
+Similarly,
+
+If a is 0, then b must be 0.
+
+If b is 0, then a must be 0.

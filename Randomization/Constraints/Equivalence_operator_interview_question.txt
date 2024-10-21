@@ -1,0 +1,24 @@
+Equivalence Operator in Constraint block(Contd .. )
+
+Lets change the constraint as following:
+
+rand bit a, b;
+
+constraint c { a <- > b;}
+This works as previous constraint since data type is bit of size 1.
+Suppose, constraint change as following:
+
+rand bit a, b;
+
+constraint c {
+
+a <- > b;
+
+a == 1;
+
+}
+
+Then possible values are:
+a=1 and b=1;
+
+IMPORTANT: This will not be valid in case a and b are not 1 bit variables.
