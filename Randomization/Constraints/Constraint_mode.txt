@@ -1,0 +1,15 @@
+Turning ON and OFF, a constraint block
+
+"constraint_mode(arg)" used for turning ON or OFF, constraint block.
+
+arg = 0 -> constraint is turned OFF.
+
+arg = 1 -> constraint is turned ON.
+
+How to use this is:
+
+<handle_for_class> .< constraint_name>.constraint_mode(arg) : this will turn
+OFF/ON the constraint.
+
+<handle_for_class>.constraint_mode(arg) : this will turn OFF/ON all the
+constraints in the class.
