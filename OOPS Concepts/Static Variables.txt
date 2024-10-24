@@ -1,0 +1,11 @@
+Static Variables 
+Earlier we discussed that memory wasn't allocated for class variable until it is 
+constructed but there is exception to this. 
+SV behaves differently if we put a static keyword in front of a class's data member, 
+then the memory for that variable gets allocated as soon as we define the class. 
+Another aspect of static member is that we have only have one copy of them no matter how 
+many times we instantiate the class to create new objects. All objects see the same 
+copy of the member. 
+class lion_cage; 
+static Iibn cage[$]; 
+endclass : lion_cage 
