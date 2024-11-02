@@ -1,0 +1,39 @@
+PACKED ARRAYS IN SV
+Key Features:
+
+Dimensions are declared before the identifier name.
+
+Guaranteed to be represented as a contiguous set of bits.
+
+Packed arrays can only be made of the single bit types (bit, logic, reg, wire, and the other net types) or other packed arrays.
+
+Data types with predefined widths cannot have packed array dimensions declared. These types are: byte, shortint, int, longint, and integer
+
+If a packed array is declared as signed:
+the array viewed as a single vector shall be signed.
+ii. the individual elements of the array are unsigned unless declared as signed.
+iii. part-select of a packed array shall be unsigned.
+
+e.g. logic [3:0] [7:0] data_mem;
+
+  76543210    76543210     76543210    76543210
+ data_mem[3] data_mem[2]  data_mem[1]  data_mem[0]
+
+ Advantages:
+ Efficient use of memory.
+
+OPERATIONS ON PACKED ARRAYS:
+bit [7:0] A;
+
+bit [7:0] B;
+
+1. Array Size: $size(A)
+
+2. Initialization: B = 8'b11111111;
+
+3. Copy one array to another: A = B;
+
+Reference: https://youtu.be/-_wjph0IWv8?si=X3OmD81LyXIGyijQ
+
+ 
+
