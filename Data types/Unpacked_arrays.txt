@@ -1,0 +1,26 @@
+UNPACKED ARRAYS IN SV
+
+1. Dimensions are declared after the identifier name.
+2. May or may not be represented as a contiguous set of bits.
+
+3. Unpacked arrays can be made of any type including object handles and events.
+
+4. Unpacked arrays can be Fixed Size Arrays, Dynamic Arrays, Associative Arrays or Queues.
+
+e.g. byte data_mem [3:0]; OR
+
+byte data_mem[4]
+
+OPERATIONS ON UNPACKED ARRAYS
+
+int array1 [2][2]
+
+int array2 [2][2]
+
+1. Size: Ssize(array1)
+2. Initialization: int array1 [2][2]='{'{1,3},'{2,4}];
+3. Copy: array2 = array1
+4. Slicing: array1[1][0]= array2[0][1]
+5. Comparison: array1[1][0] != array2[1][0]
+
+Reference: https://www.youtube.com/watch?v=-qxDQF8u6XI&list=PL44oI9iwgKq7F_Z_x5IFU4mC0-ux1jnp0&index=7
