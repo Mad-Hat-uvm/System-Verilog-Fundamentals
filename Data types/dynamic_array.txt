@@ -1,0 +1,25 @@
+DYNAMIC ARRAYS
+
+Key Features:
+- An unpacked array whose size can be decided at the run time.
+- At the time of declaration, the array is empty.
+- The array size is determined during the run time only, when it is allocated memory
+using new constructor.
+- Can be allocated and resized at the time of simulation.
+
+Syntax:
+
+int dyn_arr[]: // Declare Empty dynamic array
+
+Methods:
+1. new[]: allocate memory to array by specifying size
+dyn_arr = new[7];
+2. $size: Display size of the dynamic array
+$size(dyn_arr);
+3. Sdelete: delete the array
+dyn_arr.delete;
+
+Advantages:
+- Efficient use of memory since you allocate the size as needed only during run time.
+Applications:
+- When you are not sure about the size of array until simulation.
