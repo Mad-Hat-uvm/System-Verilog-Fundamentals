@@ -1,0 +1,21 @@
+2-state variables in SV
+
+· 2-state data types in SV:
+bit
+byte
+int
+shortint
+longint
+
+. ADVANTAGES
+- Improved performance
+- Improved memory usage
+
+. CAUTION
+- Signed 2-state variables in randomization can result in negative value.
+If you define a byte variable, it's value ranges from -128 to +127 & not from 0 to 255.
+Solution: You could use unsigned declaration to avoid this.
+When a 4-state value is converted to a 2-state value, any 'x' or 'z' is converted to 0.
+Verification engineers need to be careful while connecting the design outputs to 2-state variables because if
+design drives 'x' or 'z', testbench may never know ---- design bug may be skipped due to this.
+Solution: Connect design outputs to 4-state variable instead of 2-state.
