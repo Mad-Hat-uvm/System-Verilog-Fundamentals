@@ -1,0 +1,22 @@
+ASSOCIATIVE ARRAYS
+Key Features:
+
+Allocate the storage only when it is used
+
+Index can be of any type
+Implements a lookup table of the elements of its declared type
+Data type to be used as an index serves as the lookup key and imposes an ordering
+
+Syntax:
+
+data_type array_id [index_type]: OR data_type array_id [*];
+
+e.g. int fruits [String];
+
+Note: Default index_type (when you use *) is int
+
+Applications:
+Used when:
+size of the collection is unknown
+
+the data space is sparse
