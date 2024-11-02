@@ -1,1 +1,17 @@
+Question: Describe a situation where 2 state data types will be useful over a 4 state datatype.
+Answer: In case of a for loop variable, in order to avoid 'x' or 'z'.
 
+Question: What is advantage of structure/union over arrays?
+Answer: In case of array, all elements will have to be of one data type, but in case of structure or union, we can store elements of 
+        different data types together.
+
+Question: What is the fundamental difference between Union and structure?
+Answer:   
+      Memory Allocation:
+
+Structure: Each member of a structure has its own memory location, so the total size of the structure is the sum of the sizes of all its members.
+Union: All members of a union share the same memory location. The total size of the union is the size of its largest member because all members occupy the same space.
+Accessing Members:
+
+Structure: Each member of a structure can hold independent values at any time. Modifying one member does not affect the others.
+Union: Only one member can hold a value at any given time. Writing to one member will overwrite the data in other members, as they share the same memory.
