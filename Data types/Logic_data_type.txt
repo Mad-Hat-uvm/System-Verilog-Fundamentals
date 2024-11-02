@@ -1,0 +1,23 @@
+. Key Features:
+
+'logic' data type
+
+4 state variable (can take values: 0, 1, x, z).
+can be driven both in procedural blocks 'initial' 'always' & continuous statements 'assign'.
+should have only one driver.
+last assignment wins behaviour in case of multiple assignment (which implies it has no hardware equivalence).
+
+Difference between 'logic' & 'reg':
+- reg can be driven only in procedural blocks like always & initial, logic can be driven in both procedural blocks &
+continuous assign statements.
+
+Difference between 'logic' & 'wire':
+- net can be driven only in continuous assign statements; logic can be driven in both procedural blocks &
+continuous assign statements.
+- can have multiple drivers.
+
+Difference between 'logic' & 'bit':
+- logic is 4-state, bit is 2-state.
+default value of logic is 'x', default value of bit is '0'.
+
+Reference: https://www.youtube.com/@SwitiSpeaksOfficial
