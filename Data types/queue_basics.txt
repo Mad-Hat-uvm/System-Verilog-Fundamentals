@@ -1,0 +1,21 @@
+Queues
+
+- Size is dynamic, varies when you add/delete elements.
+- Collection of homogeneous elements.
+- Analogous to a one-dimensional unpacked array that grows and shrinks automatically.
+- Syntax as unpacked arrays, but specify $ as the array size.
+eg int q[5]//Unbounded Queue
+- maximum size of a queue can be limited by specifying right bound (optional)
+e-g int q[$:8]//Bounded Queue with max size of 8
+
+Advantages:
+- In-built methods for element sorting, searching, insertion, deletion, etc.
+
+Queue methods:
+int size();                         : No. of items in the queue
+insert(int index, queue_type item); : Inserts the item at specified index
+delete(int index);                  : Deletes the item at the specific index
+queue_type pop_front();             : Removes and returns the first element of the queue
+queue_type pop_back();              : Removes and returns the last element of the queue
+push_front(queue_type item);        : Inserts the given element at the front of the queue
+push_back(queue_type item);         : Inserts the given element at the end of the queue
