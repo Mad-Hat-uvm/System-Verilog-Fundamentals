@@ -1,1 +1,79 @@
+To identify a missing number from an array of 5 elements where numbers are in a given range (e.g., 1 to 5 or 1 to N), you can use several approaches.
 
+1. Using the Sum Formula (Efficient Method)
+
+If the array contains numbers from 1 to 5, the sum of the first N natural numbers is:
+￼
+For N = 5, the expected sum is:
+￼
+If the actual sum of the array is different, the missing number is:
+￼
+
+SystemVerilog Code:
+
+module find_missing_number;
+    int arr[] = '{1, 2, 4, 5}; // Given array (one missing number)
+    int N = 5;
+    int expected_sum, actual_sum, missing_number;
+
+    initial begin
+        expected_sum = (N * (N + 1)) / 2; // Sum of 1 to 5
+        actual_sum = 0;
+
+        // Calculate sum of array elements
+        foreach (arr[i]) begin
+            actual_sum += arr[i];
+        end
+
+        // Find the missing number
+        missing_number = expected_sum - actual_sum;
+
+        $display("Missing number is: %0d", missing_number);
+    end
+endmodule
+
+Expected Output:
+
+Missing number is: 3
+
+This method runs in O(N) time and requires O(1) space, making it the most efficient.
+
+2. Using XOR Method (Bitwise Approach)
+
+Another efficient way is to use XOR, which cancels out duplicate numbers:
+￼
+
+SystemVerilog Code:
+
+module find_missing_number_xor;
+    int arr[] = '{1, 2, 4, 5}; // Given array (one missing number)
+    int N = 5;
+    int xor_full = 0, xor_arr = 0, missing_number;
+
+    initial begin
+        // XOR of all numbers from 1 to N
+        for (int i = 1; i <= N; i++) begin
+            xor_full ^= i;
+        end
+
+        // XOR of all elements in the array
+        foreach (arr[i]) begin
+            xor_arr ^= arr[i];
+        end
+
+        // Missing number is the difference
+        missing_number = xor_full ^ xor_arr;
+
+        $display("Missing number is: %0d", missing_number);
+    end
+endmodule
+
+Expected Output:
+
+Missing number is: 3
+
+	•	XOR efficiently finds the missing number without extra memory.
+	•	Time Complexity: O(N)
+	•	Space Complexity: O(1)
+
+Would You Like an Example for a Larger Array or with Duplicates?
