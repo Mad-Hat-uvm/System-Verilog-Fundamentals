@@ -1,0 +1,54 @@
+What Does 4K Alignment Mean?
+
+4K alignment means that a memory address or data structure is located at a memory boundary that is a multiple of 4096 bytes (4 KB).
+
+Why is 4K Alignment Important?
+	1.	Memory Page Boundaries:
+	•	Many systems (especially CPUs and MMUs) manage memory in 4KB pages.
+	•	4K-aligned addresses ensure efficient memory mapping and avoid page boundary issues.
+	2.	Performance Optimization:
+	•	Certain hardware (like DMA, caches, or memory controllers) may require 4K-aligned addresses for optimal data transfer performance.
+	3.	Avoiding Page Splitting:
+	•	If data spans two memory pages (misaligned access), it may require multiple memory accesses, increasing latency.
+	4.	Hardware & Driver Requirements:
+	•	Many PCIe, DMA, or memory-mapped peripherals require buffers to be 4K-aligned for direct memory access.
+
+Example of 4K-Aligned Addresses
+
+A 4K-aligned address must be a multiple of 4096 (0x1000):
+
+0x00000000  (aligned)
+0x00001000  (aligned)
+0x00002000  (aligned)
+0x00003000  (aligned)
+...
+
+However, the following addresses are NOT 4K-aligned:
+
+0x00001234  (not aligned)
+0x00001A00  (not aligned)
+0x00003F80  (not aligned)
+
+To check if an address is 4K-aligned, use:
+
+if (addr % 4096 == 0) // OR (addr[11:0] == 12'b0)
+    $display("Address is 4K-aligned!");
+else
+    $display("Address is NOT 4K-aligned!");
+
+4K Alignment in SystemVerilog
+
+When generating random memory addresses that are 4K-aligned, you must ensure that the lower 12 bits are zero:
+
+constraint align_4k {
+    addr % 4096 == 0; // OR addr[11:0] == 12'b0
+}
+
+This guarantees that the address is a multiple of 4096 bytes.
+
+Real-World Applications
+	•	Operating Systems: Pages in virtual memory systems are typically 4K-aligned.
+	•	PCIe & DMA Buffers: Many devices require 4K-aligned memory buffers for direct access.
+	•	Cache & MMU Efficiency: Many CPUs and GPUs optimize memory access using aligned addresses.
+
+Would you like an example related to UVM testbenches or hardware verification?
