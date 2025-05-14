@@ -33,7 +33,7 @@ class randc_emulator;
     function void randomize_val();
         //If all the values have been used, reset for a new cycle
         if(history.size() == 0)
-         inti();
+         init();
 
         //Pick a random value index from 0 to queue size-1
          int idx = $urandom_range(0, history.size() - 1);
