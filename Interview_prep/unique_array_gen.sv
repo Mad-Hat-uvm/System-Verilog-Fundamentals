@@ -3,7 +3,7 @@
 - All values are less than 10 */
 
 class unique_array_gen;
-    rand bit [3:0] arr[5];
+    rand bit [3:0] arr[];
 
     constraint no_duplicates {
         foreach (arr[i])
