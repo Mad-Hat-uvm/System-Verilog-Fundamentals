@@ -36,19 +36,20 @@ module bus_watchdog_timer(
         else begin
             timeout_error <= 0;
 
-             if(start_transaction) begin
+             if(complete_transaction) begin
                 cycle_counter <= 1'b0;
-                active_timer  <= 1'b1;
-             end else if(active_timer == 1 && !complete_transaction) begin
+                active_timer  <= 1'b0;
+
+            end else if(complete_transaction) begin
+                cycle_counter <= 0;
+                active_timer  <= 0;
+            end
+            end else if(active_timer == 1 && !complete_transaction) begin
                 cycle_counter <= cycle_counter + 1;
 
                 if(cycle_counter >= 5) begin
                     timeout_error = 1'b1;
-                end else if(complete_transaction) begin
-                cycle_counter <= 0;
-                active_timer  <= 0;
                 
-                end
              end
         end
     end
