@@ -40,7 +40,7 @@ module bus_watchdog_timer(
                 cycle_counter <= 1'b0;
                 active_timer  <= 1'b0;
 
-            end else if(complete_transaction) begin
+            end else if(start_transaction) begin
                 cycle_counter <= 0;
                 active_timer  <= 0;
             end
